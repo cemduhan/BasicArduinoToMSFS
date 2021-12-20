@@ -1,0 +1,32 @@
+{
+  "comm_port" : "COM3",
+  "cycle_time" : 100,
+  "pins" : [
+    {
+      "pin_number" : 1,
+      "can_repeat" : true,
+      "timeout" : 100,
+      "input_type" : "a",
+      "max_value" : 999,
+      "threshold" : 750,
+      "compare" : true,
+      "min_value" : 0,
+      "start_value" : 444,
+      "system" : "Autopilot",
+      "function" : "HEADING_BUG_INC"
+    },
+    {
+      "pin_number" : 2,
+      "can_repeat" : true,
+      "timeout" : 100,
+      "input_type" : "d",
+      "max_value" : 999,
+      "threshold" : 750,
+      "compare" : false,
+      "min_value" : 0,
+      "start_value" : 444,
+      "system" : "Autopilot",
+      "function" : "HEADING_BUG_INC"
+    }
+  ]
+}

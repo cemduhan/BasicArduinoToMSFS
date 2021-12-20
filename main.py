@@ -4,10 +4,18 @@ from SimConnect import *
 import logging
 from SimConnect.Enum import *
 from time import sleep
+import json
+from types import SimpleNamespace
+
+def get_setting():
+
+    # f = open('data.json')
+    # data = json.load(f)
+
+    return json.loads(open('settings.json.json'), object_hook=lambda d: SimpleNamespace(**d))
 
 
-
-def validinput(prompt):
+def valideteinput(prompt):
     try:
         trt = float(prompt) * 1000
         return trt
@@ -78,37 +86,37 @@ if __name__ == "__main__":
     while not sm.quit:
         print("Reading")
         # Speed Start
-        if validinput(SpeedBluePot.read()) > 750:
+        if valideteinput(SpeedBluePot.read()) > 750:
             INC_SPEED()
             print("Speed Increase")
-        elif validinput(SpeedBluePot.read()) < 550:
+        elif valideteinput(SpeedBluePot.read()) < 550:
             DEC_SPEED()
             print("Speed Decrease")
         # Speed End
 
         # Heading Start
-        if validinput(HeadingWhitePot.read()) > 750:
+        if valideteinput(HeadingWhitePot.read()) > 750:
             INC_HEADING()
             print("Heading Increase")
-        elif validinput(HeadingWhitePot.read()) < 550:
+        elif valideteinput(HeadingWhitePot.read()) < 550:
             DEC_HEADING()
             print("Heading Decrease")
         # Heading End
 
         # Altitude Start
-        if validinput(AltitudeGreenPot.read()) > 750:
+        if valideteinput(AltitudeGreenPot.read()) > 750:
             INC_ALT()
             print("Altitude Increase")
-        elif validinput(AltitudeGreenPot.read()) < 550:
+        elif valideteinput(AltitudeGreenPot.read()) < 550:
             DEC_ALT()
             print("Altitude Decrease")
         # Altitude End
 
         # VerticalSpeed Start
-        if validinput(VerticalSpeedBlackPot.read()) > 750:
+        if valideteinput(VerticalSpeedBlackPot.read()) > 750:
             INC_VES()
             print("VerticalSpeed Increase")
-        elif validinput(VerticalSpeedBlackPot.read()) < 550:
+        elif valideteinput(VerticalSpeedBlackPot.read()) < 550:
             DEC_VES()
             print("VerticalSpeed Decrease")
         # VerticalSpeed End
